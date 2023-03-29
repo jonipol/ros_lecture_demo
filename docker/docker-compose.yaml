@@ -9,15 +9,13 @@ services:
     privileged: true  # Security risk. For development and prototyping helps. Should not exist in prod version
     stdin_open: true
     tty: true
-    runtime: nvidia
+    runtime: nvidia  # Sometimes required for display / Gui to work on machines with nvidia graphics card
 
     environment:
       ROS_DOMAIN_ID: "1"
-      QT_X!!_NO_MITSHM: "1"
-      DISPLAY: $DISPLAY
+      QT_X!!_NO_MITSHM: "1"  # Required for display / Gui to work
+      DISPLAY: $DISPLAY  # Required for display / Gui to work
     volumes:
-      - ${LECTURE_DEMO_PATH}/logs/lecture_demo/:/root/.ros/:rw
-      - ${LECTURE_DEMO_PATH}/src:/workspace/src
       - /tmp/.X11-unix:/tmp/.X11-unix
-    # command: ros2 run lecture_demo demo_publisher.py
+    # command: ros2 run lecture_demo demo_publisher.py  # Using this command the publisher will start automatically
     command: bash

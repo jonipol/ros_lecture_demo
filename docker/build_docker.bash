@@ -1,1 +1,1 @@
-docker build --network=host -t lecture_demo -f Dockerfile ../
+docker build -t lecture_demo -f Dockerfile ../

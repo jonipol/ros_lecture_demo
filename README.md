@@ -1,14 +1,23 @@
 # ros_lecture_demo
-A simple ros and docker demo to show in lectures
+A simple ros and docker demo to show in lectures. Tested on unix system. For windows the setup requires bit extra steps including installing WSL2 etc.
+
+Contains an example of and publisher in python. Running the publisher nodes with turtlesim will visualize what the effect of publishers.
+
+Note: This example has CMakeLists.txt approach for specifying the package. This will allow you to have python and cpp sources in same package.
 
 # How to run
 
-- You will need docker and docker-compose installed on your machine (Can be ran without compose but requires you to write the command manually)
-- Your system must have environment variable `LECTURE_DEMO_PATH` set. To set run `export LEXTURE_DEMO_PATH=<path/to/lecture_demo/
+- You will need docker[https://docs.docker.com/engine/install/] (and optionally docker-compose[https://docs.docker.com/compose/install/]) installed on your machine
 
-For gui following command is required `xhost +local:root`. NOTE: This is not the safest option!
-- `cd docker`
+
+For gui following command is required to be ran on host machine `xhost +local:lecture_demo`. (To remove the right from xhost run `xhost -local:lecture_demo`)
+
+- `git clone https://github.com/jonipol/ros_lecture_demo.git`
+- `cd lecture_demo/docker`
 - `bash build_image.bash`
+- `docker run -it --name="lecture_demo" --env="DISPLAY=$DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --runtime=nvidia lecture_demo bash`
+
+Or if you have docker-compose you can run
 - `docker-compose up`
 
 To open additional terminals `docker exec -it lecture_demo bash`

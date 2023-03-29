@@ -30,9 +30,9 @@ def main(args=None):
         rclpy.spin(demo_publisher)
     except KeyboardInterrupt:
         pass
-
-    demo_publisher.destroy_node()
-    rclpy.shutdown()
+    finally:
+        demo_publisher.destroy_node()
+        rclpy.shutdown()
 
 
 if __name__ == "__main__":
