@@ -21,3 +21,8 @@ Or if you have docker-compose you can run
 - `docker-compose up`
 
 To open additional terminals `docker exec -it lecture_demo bash`
+
+Once the container is running you can run
+- `ros2 run turtlesim turtlesim_node` in one terminal
+- `ros2 run lecture_demo demo_publisher.py` in other terminal
+Now you should be seeing the ros magic working.
