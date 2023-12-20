@@ -10,10 +10,10 @@ services:
     stdin_open: true
     tty: true
     runtime: nvidia  # Sometimes required for display / Gui to work on machines with nvidia graphics card
-
+    network_mode: host
     environment:
       ROS_DOMAIN_ID: "1"
-      QT_X!!_NO_MITSHM: "1"  # Required for display / Gui to work
+      QT_X11_NO_MITSHM: "1"  # Required for display / Gui to work
       DISPLAY: $DISPLAY  # Required for display / Gui to work
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix

@@ -16,7 +16,12 @@ class DemoPublisher(Node):
     def timer_callback(self):
         msg = Twist()
         msg.linear.x = 2.0
+        msg.linear.y = 0.0
+        msg.linear.z = 0.0
+        msg.angular.x = 0.0
+        msg.angular.y = 0.0
         msg.angular.z = 1.0
+
         self._publisher.publish(msg)
         self.get_logger().info("Publishing twist")
 
