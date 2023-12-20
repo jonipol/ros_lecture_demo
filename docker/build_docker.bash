@@ -1,1 +1,1 @@
-docker build -t lecture_demo -f Dockerfile ../
+docker build -t humble_sandbox -f Dockerfile ../

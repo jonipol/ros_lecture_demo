@@ -3,8 +3,8 @@ version: "2.4"  # 3.8 didn't support runtime argument
 
 services:
   lecture_demo:
-    container_name: lecture_demo
-    image: lecture_demo
+    container_name: humble_sandbox
+    image: humble_sandbox
     # network_mode: host  # "host" dangerous. ok for dev work if carefully using network
     privileged: true  # Security risk. For development and prototyping helps. Should not exist in prod version
     stdin_open: true

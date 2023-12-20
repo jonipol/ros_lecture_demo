@@ -9,6 +9,10 @@ COPY src/ $WORKSPACE/src/
 # Install turtlesim for visualization
 RUN apt update && apt install -y ros-humble-turtlesim
 
+RUN cd ${WORKSPACE} && \
+    cd src && \
+    git clone -b ros2 https://github.com/ros-drivers/velodyne.git
+
 # Build out ros packages
 RUN  cd ${WORKSPACE} && \
      . /opt/ros/$ROS_DISTRO/setup.sh && \
