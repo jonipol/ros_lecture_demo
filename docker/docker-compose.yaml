@@ -17,5 +17,8 @@ services:
       DISPLAY: $DISPLAY  # Required for display / Gui to work
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${LOCAL_ROS_WORKSPACE_PATH}/src:/main_workspace/src  # this line allows you to mount and sync whatever changes are
+                                                        # happening inside the container (new code, new packages), to
+                                                        # the outside (host machine)
     # command: ros2 run lecture_demo demo_publisher.py  # Using this command the publisher will start automatically
     command: bash

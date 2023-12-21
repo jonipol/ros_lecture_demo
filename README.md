@@ -9,6 +9,7 @@ Note: This example has CMakeLists.txt approach for specifying the package. This 
 
 - You will need docker[https://docs.docker.com/engine/install/] (and optionally docker-compose[https://docs.docker.com/compose/install/]) installed on your machine
 
+Before anything, add the following line to your `~/.bashrc` file, and then open a new terminal: `export LOCAL_ROS_WORKSPACE_PATH=<absolute_path_to_the_root_of_this_project>`. In my case, the value of that env variable is: `/home/george/workspaces/ros_lecture_demo`.
 
 For gui following command is required to be ran on host machine `xhost +local:humble_sandbox`. (To remove the right from xhost run `xhost -local:humble_sandbox`)
 
