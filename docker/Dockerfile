@@ -16,6 +16,8 @@ RUN cd ${WORKSPACE} && \
 # Build out ros packages
 RUN  cd ${WORKSPACE} && \
      . /opt/ros/$ROS_DISTRO/setup.sh && \
+     apt-get update -y && \
+     rosdep install --from-paths src --ignore-src -r -y --rosdistro ${ROS_DISTRO} && \
      colcon build
 
 # Opening new terminals will now have workspace sourced
