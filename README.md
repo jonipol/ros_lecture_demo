@@ -13,7 +13,7 @@ Note: This example has CMakeLists.txt approach for specifying the package. This 
 For gui following command is required to be ran on host machine `xhost +local:lecture_demo`. (To remove the right from xhost run `xhost -local:lecture_demo`)
 
 - `git clone https://github.com/jonipol/ros_lecture_demo.git`
-- `cd lecture_demo/docker`
+- `cd ros_lecture_demo/docker`
 - `bash build_image.bash`
 - `docker run -it --name="lecture_demo" --env="DISPLAY=$DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --runtime=nvidia lecture_demo bash`
 
@@ -24,5 +24,5 @@ To open additional terminals `docker exec -it lecture_demo bash`
 
 Once the container is running you can run
 - `ros2 run turtlesim turtlesim_node` in one terminal
-- `ros2 run lecture_demo demo_publisher.py` in other terminal
+- `ros2 run lecture_demo demo_publisher.py` in other terminal (run `docker exec -it lecture_demo bash` to open terminal in the container)
 Now you should be seeing the ros magic working.
