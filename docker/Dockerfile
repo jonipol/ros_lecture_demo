@@ -7,9 +7,9 @@ RUN mkdir -p $WORKSPACE/src
 COPY src/ $WORKSPACE/src/
 
 # Install turtlesim for visualization
-RUN apt update && apt install -y ros-humble-turtlesim
+RUN apt update && apt install -y ros-${ROS-DISTRO}-turtlesim
 
-# Build out ros packages
+# Build our ros packages
 RUN  cd ${WORKSPACE} && \
      . /opt/ros/$ROS_DISTRO/setup.sh && \
      colcon build
